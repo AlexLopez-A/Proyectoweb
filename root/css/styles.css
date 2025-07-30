@@ -1,0 +1,782 @@
+/* --- Estilos para el header y navegación --- */
+header {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background: #e6c999;
+    color: #333; /* Cambiado a color oscuro para mejor contraste */
+    padding: 1rem 0.8rem; /* Más padding a los lados */
+    display: flex; /* Flexbox para alinear logo y menú */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espacio entre logo y menú */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+section {
+    padding-top: 100px; /* Espacio para evitar que el contenido quede oculto detrás del header */
+}
+header img {
+    width: 120px; /* Tamaño fijo para mejor control */
+    height: auto; /* Mantiene proporción */
+    margin: 0; /* Eliminamos margen anterior */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+    position: relative; /* Para el efecto hover */
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover y activo */
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: #fff;
+    background-color: #e67e22; /* Color naranja para contraste */
+    transform: translateY(-2px); /* Efecto de levantar */
+}
+
+/* Subrayado animado al pasar el mouse */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e67e22;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Efecto para el item activo */
+nav ul li a.active {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+main, .contenido-principal, .galeria-proyectos, .seccion-flip-cards, .servicios-constructora {
+    margin-top: 100px; /* Ajusta el valor según la altura real de tu header */
+}
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    header img {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+}
+h1 {
+    text-align: center;
+    color: #333; /* Color oscuro para mejor contraste */
+    margin: 20px 0;
+    font-size: 4.5rem; /* Tamaño de fuente más grande */
+}
+p {
+    text-align: center;
+    color: #666; /* Color gris para el texto */
+    max-width: 1000px; /* Ancho máximo para mejor legibilidad */
+    margin: 0 auto; /* Centrado horizontal */
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    line-height: 1.6; /* Mayor interlineado para mejor lectura */
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #33cf6c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease; /* Cambiado a 'all' para animar transform y filter */
+}
+
+.whatsapp-button img {
+    width: 130%;
+    height: 120%;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* [AGREGADO] Transición para el zoom */
+}
+
+/* [NUEVO] Efecto de zoom al hacer hover */
+.whatsapp-button:hover img {
+    transform: scale(1.2); /* Aumenta tamaño en 20% */
+}
+
+/* [NUEVO] Efecto de brillo al hacer hover */
+.whatsapp-button:hover {
+    filter: brightness(1.1); /* Aclara ligeramente el fondo */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+}
+
+
+/* NUEVOOOOOOOOOOOOOOOOOOOOOOO */
+
+
+/* [GALERÍA AGREGADA] Estilos para la sección de proyectos */
+.galeria-proyectos {
+    padding: 40px 20px;
+    background-color: #fdf9f9;
+    margin-top: 30px;
+}
+
+.galeria-proyectos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    position: relative;
+}
+
+.galeria-proyectos h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e67e22;
+    margin: 15px auto 0;
+}
+
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proyecto-card {
+    background: rgb(245, 243, 243);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.imagen-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.proyecto-card:hover .imagen-container img {
+    transform: scale(1.05);
+}
+
+.hover-efecto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(230, 126, 34, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proyecto-card:hover .hover-efecto {
+    opacity: 1;
+}
+
+.hover-efecto i {
+    color: rgb(204, 179, 179);
+    font-size: 40px;
+}
+
+.descripcion-proyecto {
+    padding: 20px;
+    border-top: 5px solid #f9e9cd;
+}
+
+.descripcion-proyecto h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.descripcion-proyecto p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.fecha-proyecto {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #e67e22;
+    font-weight: 600;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .contenedor-galeria {
+        grid-template-columns: 1fr;
+    }
+    
+    .imagen-container {
+        height: 200px;
+    }
+}
+
+
+/* carrusel */
+
+
+/* [ESTILOS MODAL CARRUSEL] */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-contenido {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carrusel-slides {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.carrusel-slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: #f87d7d00;
+}
+
+.carrusel-slides img.activo {
+    opacity: 1;
+}
+
+.anterior, .siguiente {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(245, 241, 241);
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.siguiente {
+    right: 0;
+}
+
+.anterior {
+    left: 0;
+}
+
+.anterior:hover, .siguiente:hover {
+    background-color: rgba(230, 126, 34, 0.8);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.cerrar-modal:hover {
+    color: #e67e22;
+}
+
+.indicadores-carrusel {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.indicador {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicador.activo {
+    background-color: #e67e22;
+}
+
+.descripcion-modal {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .modal-contenido {
+        width: 95%;
+    }
+    
+    .carrusel-slides {
+        height: 50vh;
+    }
+    
+    .anterior, .siguiente {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+
+/*proyectoooooooooooooooooooos*/
+
+
+/* [ESTILOS CARRUSEL FLIP AGREGADOS] */
+.seccion-flip-cards {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.seccion-flip-cards h2 {
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.seccion-flip-cards h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e67e22;
+    margin: 15px auto 30px;
+}
+
+.seccion-flip-cards .subtitulo {
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.contenedor-carrusel-flip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px 0;
+    gap: 30px;
+    scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+}
+
+.contenedor-carrusel-flip::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en Chrome/Safari */
+}
+
+.flip-card {
+    scroll-snap-align: start;
+    flex: 0 0 300px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #f9e9cd;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-card-back h3 {
+    color: #e67e22;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.flip-card-back p {
+    line-height: 1.6;
+}
+
+.controles-carrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.control-anterior, .control-siguiente {
+    background: #e67e22;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.control-anterior:hover, .control-siguiente:hover {
+    background: #d35400;
+    transform: scale(1.1);
+}
+
+.puntos-indicadores {
+    display: flex;
+    gap: 10px;
+}
+
+.puntos-indicadores span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.puntos-indicadores span.activo {
+    background: #e67e22;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flip-card {
+        flex: 0 0 250px;
+        height: 350px;
+    }
+    
+    .flip-card-back {
+        padding: 20px;
+    }
+}
+
+
+/* GMAIL BUTTON */
+
+/* [BOTÓN GMAIL AGREGADO] */
+.gmail-button {
+    position: fixed;
+    bottom: 90px; /* 70px debajo de WhatsApp */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #D44638; /* Color característico de Gmail */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.gmail-button:hover {
+    transform: scale(1.1);
+    background-color: #c23321;
+}
+
+.gmail-button img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .gmail-button {
+        bottom: 80px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .gmail-button img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+
+/*servicioooooooooooooooooos*/
+
+/* [ESTILOS SECCIÓN SERVICIOS] */
+.servicios-constructora {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    position: relative;
+}
+
+.servicios-constructora::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(90deg, #e67e22, #d35400);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.servicios-constructora h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.servicios-constructora h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #e67e22;
+    margin: 15px auto 30px;
+}
+
+.subtitulo-servicios {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.card-servicio {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    text-align: center;
+    border-top: 5px solid #e67e22;
+}
+.card-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.icono-servicio {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: #f9e9cd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #e67e22;
+}
+
+.card-servicio h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.card-servicio ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.card-servicio ul li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.card-servicio ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.btn-servicio {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-servicio:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-servicios {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicios-constructora {
+        padding: 60px 0;
+    }
+    
+    .servicios-constructora h2 {
+        font-size: 2rem;
+    }
+    
+    .card-servicio {
+        padding: 25px;
+    }
+}
+
+
+
+/* desplaz|amiento suave al hacer clic en enlaces */
+
+/* [SMOOTH SCROLLING AGREGADO] */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave */;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Desactiva el desplazamiento suave si el usuario prefiere menos movimiento */
+    }
+}
+
+.contactos-constructora h2{
+text-align: center;
+padding-top: 0%;
+}
