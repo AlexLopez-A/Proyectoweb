@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
 
 <section id="index" class="contenido-principal">
     <div class="container">
@@ -19,7 +19,7 @@
         <!-- Proyecto 1 -->
         <div class="proyecto-card">
             <div class="imagen-container">
-                <img src="img/img74.jpg" alt="Proyecto de construcción 1">
+                <img src="img74.jpg" alt="Proyecto de construcción 1">
                 <div class="hover-efecto">
                     <i class="fas fa-search-plus"></i> <!-- Ícono de lupa -->
                 </div>
@@ -36,7 +36,7 @@
         <!-- Proyecto 2 -->
         <div class="proyecto-card">
             <div class="imagen-container">
-                <img src="img/img7.jpg" alt="Proyecto de construcción 2">
+                <img src="img7.jpg" alt="Proyecto de construcción 2">
                 <div class="hover-efecto">
                     <i class="fas fa-search-plus"></i>
                 </div>
@@ -53,7 +53,7 @@
         <!-- Proyecto 3 -->
         <div class="proyecto-card">
             <div class="imagen-container">
-                <img src="img/img73.jpg" alt="Proyecto de construcción 3">
+                <img src="img73.jpg" alt="Proyecto de construcción 3">
                 <div class="hover-efecto">
                     <i class="fas fa-search-plus"></i>
                 </div>
@@ -101,11 +101,13 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="img/imagen1.jpg" alt="Proceso de construcción 1">
+                    <img src="img10.jpg" alt="Proceso de construcción 1">
                 </div>
                 <div class="flip-card-back">
-                    <h3>Planificación</h3>
-                    <p>Desarrollamos planes detallados con visualizaciones 3D para garantizar que el proyecto cumpla con todas tus expectativas.</p>
+                    <h3>Visita Técnica y evaluación del Sitio</h3>
+                    <p>Reunión con el cliente para conocer necesidades.
+                       Inspección del terreno, levantamiento topográfico básico.
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,11 +116,12 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="img/imagen2.jpg" alt="Proceso de construcción 2">
+                    <img src="img48.jpg" alt="Proceso de construcción 2">
                 </div>
                 <div class="flip-card-back">
-                    <h3>Materiales</h3>
-                    <p>Trabajamos solo con materiales de primera calidad, garantizando durabilidad y acabados perfectos.</p>
+                    <h3>Diseño y Planificación</h3>
+                    <p>Elaboración de planos, Propuesta de materiales y
+                       acabados según el entorno, </p>
                 </div>
             </div>
         </div>
@@ -127,11 +130,16 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="img/img/img1.jpg" alt="Proceso de construcción 2">
+                    <img src="img11.jpg" alt="Proceso de construcción 2">
                 </div>
                 <div class="flip-card-back">
-                    <h3>Materiales</h3>
-                    <p>Trabajamos solo con materiales de primera calidad, garantizando durabilidad y acabados perfectos.</p>
+                    <h3>Preparación del terreno</h3>
+                <p>
+                    Limpieza del área,Nivelación del suelo
+                    y replanteo con estacas e hilos guía.Excavación 
+                    según profundidad requerida para aceras, escaleras o jardineras.
+                </p>
+                </p>
                 </div>
             </div>
         </div>
@@ -144,11 +152,15 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="img/img/img3.jpg" alt="Proceso de construcción 2">
+                    <img src="img7.jpg" alt="Proceso de construcción 2">
                 </div>
                 <div class="flip-card-back">
-                    <h3>Materiales</h3>
-                    <p>Trabajamos solo con materiales de primera calidad, garantizando durabilidad y acabados perfectos.</p>
+                    <h3>Ejecución de la Obra</h3>
+                    <p>
+                        Colocación de base compactada, Instalación de moldes o encofrados.
+                        Vertido de concreto reforzado con malla o varilla.
+                        Acabado: escobillado, estampado o alisado.
+                    </p>
                 </div>
             </div>
         </div>
@@ -175,10 +187,9 @@
                 </div>
                 <h3>Construcciones</h3>
                 <ul>
-                    <li>Casas habitación</li>
-                    <li>Departamentos</li>
-                    <li>Condominios</li>
-                    <li>Remodelaciones</li>
+                    <li>Muros de contencion</li>
+                    <li>Pavimentos</li>
+                    <li>Escaleras</li>
                 </ul>
             </div>
             
@@ -189,10 +200,9 @@
                 </div>
                 <h3>Remodelaciones</h3>
                 <ul>
-                    <li>Oficinas corporativas</li>
-                    <li>Locales comerciales</li>
-                    <li>Centros comerciales</li>
-                    <li>Restaurantes</li>
+                    <li>Remodelaciones interiores</li>
+                    <li>Remodelaciones exteriores</li>
+                    <li>Diseño de entrada</li>
                 </ul>
             </div>
             
@@ -201,12 +211,11 @@
                 <div class="icono-servicio">
                     <i class="fas fa-industry"></i>
                 </div>
-                <h3>Demoliciones</h3>
+                <h3>Decoraciones</h3>
                 <ul>
-                    <li>Naves industriales</li>
-                    <li>Almacenes</li>
-                    <li>Plantas de producción</li>
-                    <li>Parques industriales</li>
+                    <li>Jardines</li>
+                    <li>Patios</li>
+                    <li>Acabados rusticos</li>
                 </ul>
             </div>
         </div>
@@ -217,8 +226,8 @@
     <div class="container">
         <h2>Contáctanos</h2>
         <p class="subtitulo-contactos">Estamos aquí para ayudarte con tu proyecto de construcción</p>
-        <p>Correo: </p>
-        <p>whatssap: </p>
+        <p>Correo: constructionsus01@gmail.com </p>
+        <p>Whatssap: +1(202)531-5926 </p>
     </div>
 </section>
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>
